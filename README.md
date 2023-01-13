@@ -1,2 +1,2 @@
-# Toolset.Extensions.Collections
-Toolset with extensions for collections.
+# Toolset
+Toolset with tools for different fields of .NET development.
