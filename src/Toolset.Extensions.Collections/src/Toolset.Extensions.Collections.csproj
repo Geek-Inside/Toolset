@@ -1,9 +1,24 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFramework>net7.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
+        <Title>Toolset.Extensions.Collections</Title>
+        <Authors>Valerii Maslennikov</Authors>
+        <Description>Useful extension methods for colletions.</Description>
+        <Copyright>MIT License Copyright (c) 2023 Valerii Maslennikov</Copyright>
+        <PackageProjectUrl>https://github.com/Geek-Inside/Toolset/tree/main/src/Toolset.Extensions.Collections</PackageProjectUrl>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <RepositoryUrl>https://github.com/Geek-Inside/Toolset/tree/main/src/Toolset.Extensions.Collections</RepositoryUrl>
+        <RepositoryType>GitHub</RepositoryType>
+        <PackageTags>extensions, collections, toolset</PackageTags>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <TargetFramework>netstandard2.0</TargetFramework>
+        <LangVersion>latestmajor</LangVersion>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+        <PackageVersion>1.0.1</PackageVersion>
     </PropertyGroup>
-
+    <ItemGroup>
+        <None Include="$(SolutionDir)README.md" Pack="true" PackagePath="\" />
+    </ItemGroup>
 </Project>

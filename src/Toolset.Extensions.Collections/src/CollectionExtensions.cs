@@ -1,7 +1,11 @@
-﻿namespace Toolset.Extensions.Collections;
+﻿[assembly: CLSCompliant(true)]
+namespace Toolset.Extensions.Collections;
 
+[CLSCompliant(true)]
 public static class CollectionExtensions
 {
+	private static readonly Random Random = new ();
+	
 	/// <summary>
 	/// Shuffles list using Fisher-Yates shuffle algorithm. Keep in mind that Fisher-Yates shuffle algorithm
 	/// do not guarantees that no element will stay in its original position.
@@ -14,7 +18,7 @@ public static class CollectionExtensions
 		while (n > 1)
 		{
 			n--;
-			var k = Random.Shared.Next(n + 1);
+			var k = Random.Next(n + 1);
 			(list[k], list[n]) = (list[n], list[k]);
 		}
 	}
@@ -31,7 +35,7 @@ public static class CollectionExtensions
 		while (n > 1)
 		{
 			n--;
-			var k = Random.Shared.Next(n + 1);
+			var k = Random.Next(n + 1);
 			(array[k], array[n]) = (array[n], array[k]);
 		}
 	}
