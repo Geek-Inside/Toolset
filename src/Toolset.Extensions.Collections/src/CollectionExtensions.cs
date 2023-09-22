@@ -4,7 +4,9 @@ namespace Toolset.Extensions.Collections;
 [CLSCompliant(true)]
 public static class CollectionExtensions
 {
-	private static readonly Random Random = new ();
+	private static int _seed = Environment.TickCount;
+	
+	private static readonly ThreadLocal<Random> Random = new(() => new Random(Interlocked.Increment(ref _seed)));
 	
 	/// <summary>
 	/// Shuffles list using Fisher-Yates shuffle algorithm. Keep in mind that Fisher-Yates shuffle algorithm
@@ -18,7 +20,7 @@ public static class CollectionExtensions
 		while (n > 1)
 		{
 			n--;
-			var k = Random.Next(n + 1);
+			var k = Random.Value.Next(n + 1);
 			(list[k], list[n]) = (list[n], list[k]);
 		}
 	}
@@ -35,7 +37,7 @@ public static class CollectionExtensions
 		while (n > 1)
 		{
 			n--;
-			var k = Random.Next(n + 1);
+			var k = Random.Value.Next(n + 1);
 			(array[k], array[n]) = (array[n], array[k]);
 		}
 	}
